@@ -49,11 +49,11 @@ if verificar_password():
 
     # Conexión (usando tus datos de Railway)
     conn =  mysql.connector.connect(
-            host="mysql-1ff576c5-yaquinito-846f.g.aivencloud.com",
-            port=28957,
-            user="avnadmin",
-            password="AVNS_4S6PBoz7B5vPQs3eRPZ",
-            database="defaultdb"
+        host=st.secrets["mysql"]["host"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        port=st.secrets["mysql"]["port"]
         )
 
     #@st.cache_data(ttl=600)
