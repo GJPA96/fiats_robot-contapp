@@ -77,7 +77,7 @@ def obtener_precio_bcv( fiat:str):   ### Obtiene por WebScrapping el valor del U
             #     locale.setlocale(locale.LC_TIME, 'spanish') # Alternativa para Windows
                 
             fecha=datetime.strptime(fecha.strip(), "%d %m %Y")
-            print(fecha)
+            #print(fecha)
         except Exception as e:
             print(f"Error al convertir la fecha: {e}")
 
