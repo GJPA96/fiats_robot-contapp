@@ -71,10 +71,10 @@ def obtener_precio_bcv( fiat:str):   ### Obtiene por WebScrapping el valor del U
         try:
             # 3. Configuramos Python temporalmente en español para que entienda "Mayo" y "Martes"
             # (En Windows se usa 'es_ES' o 'spanish'. En Linux/Google Cloud se usa 'es_ES.UTF-8')
-            try:
-                locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
-            except locale.Error:
-                locale.setlocale(locale.LC_TIME, 'spanish') # Alternativa para Windows
+            # try:
+            #    locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
+            #except locale.Error:
+            #     locale.setlocale(locale.LC_TIME, 'spanish') # Alternativa para Windows
                 
             fecha=datetime.strptime(fecha.strip(), "%d %m %Y")
             print(fecha)
