@@ -1,7 +1,7 @@
 import pandas as pd
-#import sqlalchemy as sa
+import sqlalchemy as sa
 import requests 
-#import numpy as np
+import numpy as np
 from datetime import datetime
 import mysql.connector
 import locale
