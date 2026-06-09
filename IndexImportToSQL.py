@@ -63,8 +63,11 @@ def obtener_precio_bcv( fiat:str):   ### Obtiene por WebScrapping el valor del U
        
 
         fecha= soup.find("span",{'class':"date-display-single"}).get_text().split()
+        
+        fecha[2]=mes_dict[fecha[2]] # Convertimos el mes de texto a número usando el diccionario
+        
         fecha="%s %s %s" %(fecha[1],fecha[2],fecha[3])
-
+        
         try:
             # 3. Configuramos Python temporalmente en español para que entienda "Mayo" y "Martes"
             # (En Windows se usa 'es_ES' o 'spanish'. En Linux/Google Cloud se usa 'es_ES.UTF-8')
@@ -72,12 +75,13 @@ def obtener_precio_bcv( fiat:str):   ### Obtiene por WebScrapping el valor del U
                 locale.setlocale(locale.LC_TIME, 'es_ES.UTF-8')
             except locale.Error:
                 locale.setlocale(locale.LC_TIME, 'spanish') # Alternativa para Windows
-            fecha=datetime.strptime(fecha.strip(), "%d %B %Y")
-            
+                
+            fecha=datetime.strptime(fecha.strip(), "%d %m %Y")
+            print(fecha)
         except Exception as e:
             print(f"Error al convertir la fecha: {e}")
 
-
+        
         return fecha,fiat_bcv
     except requests.exceptions.HTTPError as err:
         print("Error al obtener datos del BCV (HTTP): {response.status_code}")
