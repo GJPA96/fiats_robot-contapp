@@ -26,7 +26,7 @@ jobs:
     - name: Instalar librerias
       run: |
         pip install --upgrade pip
-        pip install requests beautifulsoup4 mysql-connector-python pandas sqlalchemy
+        pip install requests beautifulsoup4 mysql-connector-python pandas SQLAlchemy
 
     # 4. Ejecutar el script pasándole los secretos guardados en GitHub
     - name: Ejecutar script de extraccion
