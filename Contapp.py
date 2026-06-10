@@ -5,9 +5,10 @@ import plotly.express as px
 import datetime as dt
 import requests 
 import datetime
+import pytz
 #import WebScrapping_fiats_SQL 
 
-
+zona_ve = pytz.timezone('America/Caracas')
 
 def verificar_password():
     """Devuelve True si el usuario ingresó la contraseña correcta."""
@@ -123,9 +124,9 @@ if verificar_password():
                 return None
     def today_info(df):
             df=df.sort_values(by=df.columns[0],ascending=True)
-            y = df.loc[df[df.columns[0]]==datetime.datetime.today().date()-datetime.timedelta(days=1)].iloc[:,1:].reset_index(drop=True)
-            t = df.loc[df[df.columns[0]]==datetime.datetime.today().date()].iloc[:,1:].reset_index(drop=True)
-            date = datetime.datetime.today().date() ### 
+            y = df.loc[df[df.columns[0]]==datetime.datetime.now(zona_ve).date()-datetime.timedelta(days=1)].iloc[:,1:].reset_index(drop=True)
+            t = df.loc[df[df.columns[0]]==datetime.datetime.now(zona_ve).date()].iloc[:,1:].reset_index(drop=True)
+            date = datetime.datetime.now(zona_ve).date() ### 
             
             
             variation=((t-y)/y)*100
@@ -275,7 +276,8 @@ if verificar_password():
         
         today = today_info(df_indicadores)
         #st.write(today['valores_hoy']["dolar_Binance"])
-        ultima_fecha_real = df_indicadores[df_indicadores['Fecha'] == datetime.datetime.today().date()].iloc[0,0]   
+        ultima_fecha_real = df_indicadores[df_indicadores['Fecha'] == datetime.datetime.now(zona_ve).date()].iloc[0,0] 
+         
         fecha_inicio_defecto =  df_indicadores['Fecha'].max()- datetime.timedelta(days=150)  # Mostrar por defecto los últimos 90 días
         fecha_inicio_all = df_indicadores['Fecha'].min()
         try : 
