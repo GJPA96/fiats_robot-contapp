@@ -279,9 +279,9 @@ if verificar_password():
         fecha_inicio_defecto =  df_indicadores['Fecha'].max()- datetime.timedelta(days=150)  # Mostrar por defecto los últimos 90 días
         fecha_inicio_all = df_indicadores['Fecha'].min()
         try : 
-            col_dolar_Binance.metric(label=" $/Bs Binance", value = f"{today['valores_hoy']["dolar_Binance"][0]:.2f}", delta = f"{today['deltas']["dolar_Binance"][0]:.2f}%" )
-            col_dolar_BCV.metric(label=" $/Bs BCV", value = f"{today['valores_hoy']["dolar_BCV"][0]:.2f}" , delta = f"{today['deltas']["dolar_BCV"][0]:.2f}%")
-            col_euro_BCV.metric(label="€/Bs BCV", value = f"{today['valores_hoy']["euro_BCV"][0]:.2f}"  , delta = f"{today['deltas']["euro_BCV"][0]:.2f}%")
+            col_dolar_Binance.metric(label=" $/Bs Binance", value = f"{today['valores_hoy']['dolar_Binance'][0]:.2f}", delta = f"{today['deltas']['dolar_Binance'][0]:.2f}%" )
+            col_dolar_BCV.metric(label=" $/Bs BCV", value = f"{today['valores_hoy']['dolar_BCV'][0]:.2f}" , delta = f"{today['deltas']['dolar_BCV'][0]:.2f}%")
+            col_euro_BCV.metric(label="€/Bs BCV", value = f"{today['valores_hoy']['euro_BCV'][0]:.2f}"  , delta = f"{today['deltas']['euro_BCV'][0]:.2f}%")
             #print(df_indicadores)
         except Exception as e:
             st.error(f"Error al mostrar los indicadores del día: {e}")
