@@ -6,7 +6,8 @@ from datetime import datetime
 import mysql.connector
 import locale
 from bs4 import BeautifulSoup
-
+import pytz
+zona_ve = pytz.timezone('America/Caracas')
 
 conn =  mysql.connector.connect(
             host="mysql-1ff576c5-yaquinito-846f.g.aivencloud.com",
@@ -133,7 +134,7 @@ def obtener_precio_binance_p2p(): ### Obtiene por WebScrapping el valor del Dola
         
         precio = data['data'][1]['adv']['price']  # Esto asume que siempre habrá al menos una oferta. En producción, deberías verificar esto.
         
-        return  datetime.now().replace(hour=0, minute=0, second=0, microsecond=0),precio
+        return  datetime.now(zona_ve).replace(hour=0, minute=0, second=0, microsecond=0),precio
         
     except requests.exceptions.HTTPError as err:
         print(f"Error geográfico o de bloqueo (HTTP): {response.status_code}")
