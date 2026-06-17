@@ -19,6 +19,7 @@ conn =  mysql.connector.connect(
 
 
 
+
 ########## Mapas y Listas #############
 
 ###Meses  a Numero
@@ -147,6 +148,13 @@ def obtener_precio_binance_p2p(): ### Obtiene por WebScrapping el valor del Dola
 
 def Actualizacion_fiats_SQL() : ### Actualiza en la base de datos el valor del dolar y euro segun el BCV y el dolar en Binance USDT
 
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SET time_zone = '-04:00';")
+    except Exception as e:
+        print(f'Error al configurar la zona horaria: {e}')  
+    finally:    
+        cursor.close()
     
     try:
         cursor = conn.cursor()
