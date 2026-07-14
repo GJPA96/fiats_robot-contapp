@@ -7,14 +7,15 @@ import mysql.connector
 import locale
 from bs4 import BeautifulSoup
 import pytz
+import os
 zona_ve = pytz.timezone('America/Caracas')
 
 conn =  mysql.connector.connect(
-            host="mysql-1ff576c5-yaquinito-846f.g.aivencloud.com",
+            host=os.environ.get("DB_HOST"),
             port=28957,
-            user="avnadmin",
-            password="AVNS_4S6PBoz7B5vPQs3eRPZ",
-            database="defaultdb"
+            user=os.environ.get("DB_USER"),
+            password=os.environ.get("DB_PASSWORD"),
+            database=os.environ.get("DB_NAME")
         )
 
 
