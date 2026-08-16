@@ -5,7 +5,7 @@
 
 
 * # Lenguajes y librerías:
- - Python Como lenguaje principal en el desarrollo del proyecto.
+ - Python como lenguaje principal en el desarrollo del proyecto.
  - - Librerias :
    - Pandas para el manejo de datos.
    - Streamlit para crear el dashboard interactivo.
@@ -13,7 +13,7 @@
    - Request para hacer solicitudes HTTP.
    - Beautifulsoap para hacer web scrapping y obtener los tipos de cambio de las fiats y la cripto moneda. 
    - MySQL Connector para conectar a una base de datos  MySQL en la nube.
- - SQL (MySQL) para creación y gestión de la base de datos.
+ - SQL (MySQL) para la creación y gestión de la base de datos.
 
 * # Plataforma y herramientas usadas:
 - Aiven : servidor en la nube donde se encuentra la base de datos.
