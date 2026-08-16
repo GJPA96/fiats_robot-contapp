@@ -1,0 +1,1 @@
+Objetivos: Crear un dashboard que muestre informacion relevante como ingresos/gastos  para diferentes periodos de tiempos, el tipo de cambio en bolivares del dolar americano y el euro  fijados por el BCV, y el valor en bolivares del USDT manejado en el P2P de Binance  
