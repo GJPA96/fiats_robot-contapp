@@ -5,7 +5,11 @@ import plotly.express as px
 import datetime as dt
 import requests 
 import datetime
+import pytz
+zona_ve = pytz.timezone('America/Caracas')
+
 #import WebScrapping_fiats_SQL 
+
 
 
 if "autenticado" not in st.session_state or not st.session_state["autenticado"]:
