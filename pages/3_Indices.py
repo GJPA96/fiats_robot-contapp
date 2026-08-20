@@ -14,15 +14,15 @@ if "autenticado" not in st.session_state or not st.session_state["autenticado"]:
     st.stop()
 
 
-
-    # Conexión (usando tus datos de Railway)
-    conn =  mysql.connector.connect(
+#Datos para conectar con la base de datos.   
+conn =  mysql.connector.connect(
         host=st.secrets["mysql"]["host"],
         user=st.secrets["mysql"]["user"],
         password=st.secrets["mysql"]["password"],
         database=st.secrets["mysql"]["database"],
         port=st.secrets["mysql"]["port"]
         )
+
 @st.cache_data(ttl=600)
 def cargar_datos_indicadores():
         # Usamos una consulta limpia ordenando por fecha para evitar desórdenes
