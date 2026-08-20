@@ -20,12 +20,12 @@ if "autenticado" not in st.session_state or not st.session_state["autenticado"]:
 
 
 
-conn =  mysql.connector.connect(
-            host="mysql-1ff576c5-yaquinito-846f.g.aivencloud.com",
-            port=28957,
-            user="avnadmin",
-            password="AVNS_4S6PBoz7B5vPQs3eRPZ",
-            database="defaultdb"
+    conn =  mysql.connector.connect(
+        host=st.secrets["mysql"]["host"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        port=st.secrets["mysql"]["port"]
         )
 
 
