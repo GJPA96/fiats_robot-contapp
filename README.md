@@ -1,4 +1,4 @@
-* # Objetivos : Crear un dashboard que muestre información financiera relevante para ayudar en las toma de decisiones financieras.
+* # Objetivos : Crear un dashboard que muestre información financiera relevante para ayudar en las toma de decisiones.
 
 * # Estado del proyecto : En desarrollo
   Actualmente el dashboard puede mostrar los ingresos/gastos  para diferentes periodos de tiempos[1], el tipo de cambio en bolivares del dólar americano y el euro  fijados por el BCV, y el valor en bolivares del USDT manejado en el P2P de Binance. Próximamente se implementara un actualización para mostrar otros indicadores.
