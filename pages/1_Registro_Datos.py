@@ -22,7 +22,13 @@ conceptos_ingresos = ("Sueldo ", "Freelance", "Inversiones","Colaboración", "Ot
 opciones_busqueda = ("Fecha","Rango de fechas", "Tipo de movimiento", "Concepto", "Rango de montos","Fiat" )
 Hoy = dt.datetime.now().strftime("%Y-%m-%d")
 #########################################################
-
+conn =  mysql.connector.connect(
+        host=st.secrets["mysql"]["host"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["password"],
+        database=st.secrets["mysql"]["database"],
+        port=st.secrets["mysql"]["port"]
+        )
 
 def verificar_password():
     """Devuelve True si el usuario ingresó la contraseña correcta."""
@@ -62,13 +68,7 @@ def verificar_password():
 
     
 
-    conn =  mysql.connector.connect(
-        host=st.secrets["mysql"]["host"],
-        user=st.secrets["mysql"]["user"],
-        password=st.secrets["mysql"]["password"],
-        database=st.secrets["mysql"]["database"],
-        port=st.secrets["mysql"]["port"]
-        )
+
     #@st.cache_data(ttl=600)
     
 def borrar_registro(id):
