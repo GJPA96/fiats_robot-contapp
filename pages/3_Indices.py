@@ -131,12 +131,12 @@ col_dolar_Binance,col_dolar_BCV, col_euro_BCV = st.columns(3,border=True)
 
 
         #st.write(df_indicadores.loc[df_indicadores['Fecha'] == datetime.datetime.today().date()-datetime.timedelta(days=1)])
-
+print()
 today = today_info(df_indicadores)
 #print(df_indicadores)
         #st.write(today['valores_hoy']["dolar_Binance"])
 ultima_fecha_real = df_indicadores[df_indicadores['Fecha'] == datetime.datetime.today().date()].iloc[0,0] 
-#print("ultima_fecha_real",ultima_fecha_real)
+print("ultima_fecha_real",ultima_fecha_real)
 fecha_inicio_defecto =  df_indicadores['Fecha'].max()- datetime.timedelta(days=150)  # Mostrar por defecto los últimos 90 días
 fecha_inicio_all = df_indicadores['Fecha'].min()
 try : 
