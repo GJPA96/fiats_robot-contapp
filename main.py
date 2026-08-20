@@ -35,7 +35,7 @@ def verificar_password():
         
         if boton_enviar:
             # Compara directamente con el archivo secrets.toml
-            if password_ingresada == st.secrets["PASSWORD_GENERAL"]:
+            if password_ingresada == st.secrets[mysql]["password"]:
                 st.session_state["autenticado"] = True
                 st.rerun()  # Forza a Streamlit a recargar el código ya autenticado
             else:
