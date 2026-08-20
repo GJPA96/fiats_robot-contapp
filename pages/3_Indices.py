@@ -94,8 +94,8 @@ def obtener_precio_binance_p2p():
                 return None        
 def today_info(df):
             df=df.sort_values(by=df.columns[0],ascending=True)
-            y = df.loc[df[df.columns[0]]==datetime.datetime.today().date()-datetime.timedelta(days=1)].iloc[:,1:].reset_index(drop=True)
-            t = df.loc[df[df.columns[0]]==datetime.datetime.today().date()].iloc[:,1:].reset_index(drop=True)
+            y = df.loc[df[df.columns[0]]==datetime.datetime.now(zona_ve.date()-datetime.timedelta(days=1)].iloc[:,1:].reset_index(drop=True)
+            t = df.loc[df[df.columns[0]]==datetime.datetime.now(zona_ve.date()].iloc[:,1:].reset_index(drop=True)
             date = datetime.datetime.today().date() ### 
             
             
@@ -135,7 +135,7 @@ col_dolar_Binance,col_dolar_BCV, col_euro_BCV = st.columns(3,border=True)
 
 
         #st.write(df_indicadores.loc[df_indicadores['Fecha'] == datetime.datetime.today().date()-datetime.timedelta(days=1)])
-print()
+
 today = today_info(df_indicadores)
 #print(df_indicadores)
         #st.write(today['valores_hoy']["dolar_Binance"])
